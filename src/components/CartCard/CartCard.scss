@@ -1,0 +1,81 @@
+.cartcard{
+    position: relative;
+
+    .main{
+        display: flex;
+        flex-direction: row;
+        border: 1px solid rgb(226, 226, 226);
+        padding: 5px;
+        gap: 20px;
+        .img{
+            flex: 2;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    
+        .info{
+            margin-top: 10px;
+            flex: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            a{
+                color: #555;
+            }
+            p{
+                margin: 0px;
+                font-size: 14px;
+            }
+            .title{
+                color: #555;
+            }
+        }
+        // .cost{
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: end;
+    
+        //     .oldprice{
+        //             color: gray;
+        //             font-size: 15px;
+        //             text-decoration: line-through;
+        //         }}
+        .cost{
+            margin-top: 10px;
+            margin-right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-end;
+            
+            .saving{
+                font-size: 13px;
+                margin: 0px;
+            }
+            .price{
+                font-size: 20px;
+                margin: 0px;
+
+            }
+
+        }
+    }
+    .functions{
+        position: absolute;
+        bottom: 8px;
+        display: flex;
+        font-size: 13px;
+        gap: 20px;
+        text-align: end;
+        right: 8px;
+        text-decoration: underline;
+        color: #555;
+        p{
+        cursor: pointer;
+        margin: 0px;
+        }
+    }
+}

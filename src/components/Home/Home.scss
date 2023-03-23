@@ -1,0 +1,48 @@
+
+  
+  .loading{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 100;
+    
+  p {
+    color: #737373;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: text 3s ease-in-out infinite;
+  }
+}
+  
+  @keyframes text {
+    50% {
+      color: black;
+    }
+  }
+
+  .error{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 100;
+    
+  p {
+    color: #000000;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

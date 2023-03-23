@@ -1,0 +1,63 @@
+.gridbox{
+    display: flex;
+    width: calc(100% - 10px);
+    margin: 5px;
+    height: 80vh;
+    gap: 5px;
+
+    a{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0%;
+    left: 0%;
+    margin: auto;
+    max-width: fit-content;
+    min-width: 100px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    height: max-content;
+    padding: 10px 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    }
+
+    .row{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex: 1;
+    overflow: hidden;
+    }
+
+    .col{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    overflow: hidden;
+
+    }
+
+    .col-large{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex: 2;
+        overflow: hidden;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+

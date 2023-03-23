@@ -1,0 +1,28 @@
+.contact{
+    background-color: #4285F4;
+    padding: 20px 0px;
+    .wraper{
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 10px;
+            margin: auto;
+
+            .social{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                    svg{
+                    height: 20px;
+                    }
+            }
+            p{
+                margin: 0px;
+                color: white;
+                font-size: 16px;
+            }
+        
+
+    }
+}

@@ -1,0 +1,56 @@
+.products{
+    display: flex;
+    margin: 10px 50px;
+    flex-wrap: wrap;
+    
+
+    .left{
+        flex: 1;
+        position: sticky;
+        height: 100%;
+        top: 66px;  
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        .filteritem{
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            user-select: none;  
+            
+            h1{
+                font-size: 20px;
+                font-weight: 100;
+                margin: 0px;
+            }
+            p{
+                margin: 0px;
+            }
+            .inputitem{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 5px;
+                color: #555;
+            }
+        }
+    }
+
+    .right{
+        flex: 3;
+        .catimg{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 50px;
+        }
+        .contain{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+    }
+}

@@ -1,0 +1,94 @@
+.login{
+    position: fixed;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+        
+        .container{
+            background-color: rgba(0, 0, 0, .85);
+            padding:50px 70px;
+            width: 300px;
+            background-color: white;
+            user-select: none;
+            border-radius: 10px;
+
+            .login_error{
+                display: flex;
+                justify-content: center;
+                padding: 15px 0px;
+                background-color: #f7dad9;
+                h4{
+                    font-weight: 100;
+                    margin: 0px;
+                    padding-left: 5px;
+                    font-size: 13px;
+                }
+                svg{
+                    height: 16px;
+                    width: 16px;
+                    color: #cf2d1a;
+                }
+            }
+
+            h1{
+                margin: 0px 0px 30px;
+                font-size: 28px;
+                font-weight: 300;
+                color: #4285F4;
+            }
+
+            h2{
+                margin: 20px 0px 0px;
+                font-weight: 100;
+                font-size: 14px;
+            }
+            
+            input{
+                padding: 10px 10px;
+                font-size: 13px;
+                border: 1px solid #555;
+                width: calc(100% - 20px);
+                margin: 5px 0px;
+                border-radius: 5px;
+            }
+            
+            
+            button{
+                padding: 10px 20px;
+                cursor: pointer;
+                background-color: #4285F4;
+                color: white;
+                border: none;
+                font-size: 13px;
+                margin:30px 0px 0px ;
+                width: 100%;
+                border-radius: 5px;
+                
+            }
+            
+            p{
+                font-size: 13.5px;
+                margin: 20px 0px 0px;
+                text-align: center;
+                color: #555;
+            
+                    span{
+                        cursor: pointer;
+                        color: black;
+                    }
+                    
+                    span:hover{
+                        text-decoration: underline;
+                    }
+                }
+                
+                input:focus{
+                    outline: none;
+                }
+        }
+}

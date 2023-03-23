@@ -1,0 +1,96 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0px;
+    padding: 10px 30px;
+    position: sticky;
+    top: 0%;
+    z-index: 10;
+    background-color: white;
+
+    p{
+        margin: 0px;
+    }
+
+    svg{
+        height: 20px;
+        color: gray;
+        padding: 8px 0px;
+    }
+    .left{
+        font-size: 30px;
+        letter-spacing: 3px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        a{
+        color: #555;
+        text-decoration: none;
+        }
+    }
+    .right{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        a{
+        color: #555;
+        text-decoration: none;
+        font-size: 16px;
+        }
+    }
+
+    .signout{
+          position: relative;
+
+        .dropdown{
+            display: none;
+            position: absolute;
+            width: 100px;
+            right: -38px;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;   
+
+            p{
+                padding: 10px 20px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .signout:hover .dropdown {display: block;}
+
+    
+    .icons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        
+        .divcon{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            p{
+                position: absolute;
+                top: -2px;
+                right: -10px;
+                width: 20px;
+                height: 20px;
+                color: white;
+                border-radius: 100%;
+                background-color: blue;
+                font-size: 13px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
