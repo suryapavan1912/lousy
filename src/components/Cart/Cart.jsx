@@ -58,10 +58,10 @@ function cart() {
                         <p>Bag total</p>
                         <p>₹{bagtotal}</p>
                     </div>
-                    <div className="orders">
+                    {bagtotal-ordertotal > 0 && <div className="orders">
                         <p>Bag Savings</p>
                         <p>-₹{bagtotal-ordertotal}</p>
-                    </div>
+                    </div>}
                     <div className="orders">
                         <p>Convenience Fee <span onClick={()=>setcharge(true)}>What's this?</span></p>
                     </div>
