@@ -112,7 +112,7 @@ async function update(url){
     <div className='product'>
       <div className="left">
         <div className="array">
-          {data.images?.map((img,id) => <img src={img} key={id} alt=""  onClick={()=>setimage(id)}/>)}
+          {data.images?.map((img,id) => <img src={img} key={id} alt=""  onMouseEnter={()=>setimage(id)}/>)}
         </div>
         <div className="img">
           <img src={data.images[image]}  alt="" />

@@ -11,13 +11,13 @@ function Gridbox() {
             <NavLink to='/products?type=clothing'>Sale</NavLink>
           </div>
           <div className="row">
-            <img src='https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt=''/>
-            <NavLink to='/products?type=clothing&gender=Women'>Women</NavLink>
+            <img src='https://images.pexels.com/photos/6867202/pexels-photo-6867202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt=''/>
+            <NavLink to='/products?type=Beauty'>Beauty</NavLink>
           </div>
         </div>
         <div className="col">
-          <img src='https://images.pexels.com/photos/8471827/pexels-photo-8471827.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt=''/>
-          <NavLink to='/products?type=clothing&gender=Children'>Kids</NavLink>
+          <img src='https://images.pexels.com/photos/7333553/pexels-photo-7333553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt=''/>
+            <NavLink to='/products?type=clothing&gender=Women'>Women</NavLink>
         </div>
         <div className="col-large">
           <div className="row">

@@ -11,7 +11,7 @@ function Card(props) {
           <div className="image">
             {props.product.exclusive && <span>Exclusive</span>}
             <img className='main' src={props.product.images[0]} alt="" />
-            <img src={props.product.images[1]} alt="" />
+            {props.product.images[1] && <img src={props.product.images[1]} alt="" />}
           </div>
             <p className="brand">{props.product.brand}</p>
             <p className='title'>{props.product.title}</p>

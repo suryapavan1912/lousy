@@ -10,16 +10,17 @@ function Products() {
 const banner = [
                 "https://images.pexels.com/photos/1049317/pexels-photo-1049317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                 "https://images.pexels.com/photos/1549280/pexels-photo-1549280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "https://images.pexels.com/photos/39369/baby-teddy-bear-cute-39369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "https://images.pexels.com/photos/313719/pexels-photo-313719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "https://images.pexels.com/photos/4938510/pexels-photo-4938510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "https://images.pexels.com/photos/313719/pexels-photo-313719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "https://images.pexels.com/photos/7081105/pexels-photo-7081105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               ]
 
 // fetch
 const navigate = useNavigate()
 const [selectedSubCats, setSelectedSubCats] = useState(null);
-const [order,setorder] = useState(0)
 const [maxprice,setmaxprice] = useState(50000)
 const [searchParams] = useSearchParams();
+
 useEffect(() => {
   let filter = ''
   for (const entry of searchParams.entries()) {
@@ -28,19 +29,9 @@ useEffect(() => {
   setSelectedSubCats(filter)
 }, [searchParams]);
 
- function handleChange(e){
-  const value = e.target.value;
-  const isChecked = e.target.checked;
-  setSelectedSubCats(isChecked ? selectedSubCats + 'category=' + value + '&' : selectedSubCats.replace('category='+ value + '&', ''))
-}
-
 useEffect(()=>{
-  selectedSubCats && navigate('/products?' + selectedSubCats.substring(0,selectedSubCats.length-1) )
-},[selectedSubCats])
+  selectedSubCats && navigate('/products?' + selectedSubCats.substring(0,selectedSubCats.length-1));
 
-const [data,error,load] = useFetch(selectedSubCats && `/products?${selectedSubCats}`)
-
-useEffect(()=>{
   var checkboxes = document.querySelectorAll('input[type="checkbox"]');
   for (var i = 0; i < checkboxes.length; i++) {
     if (selectedSubCats.includes(checkboxes[i].name)){
@@ -49,25 +40,38 @@ useEffect(()=>{
     else{
       checkboxes[i].checked = false;}
   }
-  var radio = document.querySelectorAll('input[type="radio"]');
-  for (i = 0; i < radio.length; i++) {
-    radio[i].checked = false;}
+  // var radio = document.querySelectorAll('input[type="radio"]');
+  // for (i = 0; i < radio.length; i++) {
+  //   radio[i].checked = false;}
+
 },[selectedSubCats])
 
-// price sorting
+function handleChange(e){
+  const value = e.target.value;
+  const isChecked = e.target.checked;
+  setSelectedSubCats(isChecked ? selectedSubCats + 'category=' + value + '&' : selectedSubCats.replace('category='+ value + '&', ''))
+}
 
-if (order === 1){
-  data.sort((a,b)=> a.price- b.price )
+const [data,error,load] = useFetch(selectedSubCats && `/products?${selectedSubCats}`)
+
+// price sorting
+const [order,setorder] = useState(0)
+
+let sort_data = data?.slice()
+if (order === 0){
+  sort_data = data?.slice()
+}
+else if (order === 1) {
+  sort_data.sort((a,b)=> a.price- b.price )
 }
 else if (order === 2) {
-data.sort((a,b)=> b.price- a.price )
+  sort_data.sort((a,b)=> b.price- a.price )
 }
-
 //set categories
 let sorts,imag
 if (selectedSubCats?.includes('Men')){ sorts = ["Shirts","T-shirts","Jackets","Jeans","Trousers"] ; imag = 0} 
 else if(selectedSubCats?.includes('Women')){ sorts = ["Tops","Jumpsuits","Jackets","Jeans","Skirts"] ; imag = 1}
-else if(selectedSubCats?.includes('Children')){sorts = ["Tops","Jumpsuits","Jackets","Jeans","Skirts"] ; imag = 2}
+else if(selectedSubCats?.includes('Beauty')){sorts = ['Eyes',"Face","Lips",'Make-Up Tools'] ; imag = 2}
 else if(selectedSubCats?.includes('Accessories')){ sorts = ["Watches","Ties","Belts","Shoes","Sunglasses"] ; imag = 3}
 else if(selectedSubCats?.includes('clothing')){sorts = ["Shirts","T-shirts","Tops","Jumpsuits","Jackets","Jeans","Trousers","Skirts"] ; imag = 4}
 
@@ -90,8 +94,9 @@ else if(selectedSubCats?.includes('clothing')){sorts = ["Shirts","T-shirts","Top
         </div>
         <div className="filteritem">
           <h1>Sort by</h1>
-          <div className="inputitem"><input type="radio" name="radio" id="4" onChange={()=>setorder(1)}  /><label htmlFor="4" >Price(Lowest first)</label></div>
-          <div className="inputitem"><input type="radio" name="radio" id="5" onChange={()=>setorder(2)} /><label htmlFor="5" >Price(Highest first)</label></div>
+          <div className="inputitem"><input type="radio" name="radio" id="4" onChange={()=>setorder(0)}  /><label htmlFor="4" >Relevance</label></div>
+          <div className="inputitem"><input type="radio" name="radio" id="5" onChange={()=>setorder(1)}  /><label htmlFor="5" >Price(Lowest first)</label></div>
+          <div className="inputitem"><input type="radio" name="radio" id="6" onChange={()=>setorder(2)} /><label htmlFor="6" >Price(Highest first)</label></div>
         </div>
       </div>
       {
@@ -100,7 +105,7 @@ else if(selectedSubCats?.includes('clothing')){sorts = ["Shirts","T-shirts","Top
         <div><img className='catimg' src={banner[imag]} alt="" /></div>
         <div className='contain'>
             {
-            data?.filter(item => maxprice>item.price)
+            sort_data?.filter(item => maxprice>item.price)
             .map((item,id) => {return(<Card product={item} key={id} />)})
             }
         </div>

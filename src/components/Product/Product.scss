@@ -23,6 +23,11 @@
                 height: 110px;
                 min-width: 80px;
                 object-fit: cover;
+                transition: .3s;
+                opacity: 1;
+            }
+            :hover{
+                opacity: .5;
             }
         }
         .img{

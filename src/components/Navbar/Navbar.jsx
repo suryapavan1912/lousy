@@ -24,7 +24,7 @@ userdata?.cart?.forEach(item =>{
         <div className='right'>
           <NavLink to='/products?type=clothing&gender=Men'>Men</NavLink>
           <NavLink to='/products?type=clothing&gender=Women'>Women</NavLink>
-          <NavLink to='/products?type=clothing&gender=Children'>Children</NavLink>
+          <NavLink to='/products?type=Beauty'>Beauty</NavLink>
           <NavLink to='/products?type=Accessories'>Accessories</NavLink>
           <div className='icons'>
             <div className='signout'>
